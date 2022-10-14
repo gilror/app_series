@@ -14,18 +14,18 @@ class HttpHandler {
   }
 
   Future<List<Media>> fetchMovies() {
-    var uri = new Uri.https(_baseUrl, "3/movie/popular",
+    var uri = Uri.https(_baseUrl, "3/movie/popular",
         {'api_key': API_KEY, 'page': "1", 'language': _languaje});
 
-    return getJson(uri).then(((data) =>
-        data['results'].map<Media>((item) => new Media(item)).toList()));
+    return getJson(uri).then(
+        ((data) => data['results'].map<Media>((item) => Media(item)).toList()));
   }
 
   Future<List<Media>> fetchSeries() {
-    var uri = new Uri.https(_baseUrl, "3/tv/popular",
+    var uri = Uri.https(_baseUrl, "3/tv/popular",
         {'api_key': API_KEY, 'page': "1", 'language': _languaje});
 
-    return getJson(uri).then(((data) =>
-        data['results'].map<Media>((item) => new Media(item)).toList()));
+    return getJson(uri).then(
+        ((data) => data['results'].map<Media>((item) => Media(item)).toList()));
   }
 }

@@ -1,59 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/common/Util.dart';
 import 'package:movie_app/model/Media.dart';
 
 class MediaListItem extends StatelessWidget {
   final Media media;
 
-  MediaListItem(this.media);
+  const MediaListItem(this.media, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    return new Card(
+    return Card(
+      // ignore: unnecessary_new
       child: new Column(
         children: <Widget>[
-          Container(
-              child: new Stack(children: <Widget>[
-            new FadeInImage.assetNetwork(
+          Stack(children: <Widget>[
+            FadeInImage.assetNetwork(
               placeholder: "assets/images/load.png",
               image: media.getBackDropUrl(),
               fit: BoxFit.cover,
               width: double.infinity,
               height: 200.0,
-              fadeInDuration: new Duration(milliseconds: 800),
+              fadeInDuration: const Duration(milliseconds: 800),
             ),
-            new Positioned(
+            Positioned(
               left: 0.0,
               bottom: 0.0,
               right: 0.0,
-              child: new Container(
-                decoration: new BoxDecoration(
-                    color: Colors.grey[900]?.withOpacity(0.5)),
-                constraints: new BoxConstraints.expand(height: 55.0),
+              child: Container(
+                decoration:
+                    BoxDecoration(color: Colors.grey[900]?.withOpacity(0.5)),
+                constraints: const BoxConstraints.expand(height: 55.0),
               ),
             ),
-            new Positioned(
+            Positioned(
               left: 10.0,
               bottom: 10.0,
-              child: new Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  new Container(
-                    child: new Text(
-                      media.title,
-                      style: new TextStyle(
-                          fontFamily: "Alfa", color: Colors.white),
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                    ),
+                  // ignore: unnecessary_new
+                  new Text(
+                    media.title,
+                    style: const TextStyle(
+                        fontFamily: "Alfa", color: Colors.white),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
                   ),
-                  new Container(
+                  SizedBox(
                     width: 280.0,
                     child: Padding(
                       padding: const EdgeInsets.only(top: 5.0),
-                      child: new Text(
+                      child: Text(
                         media.getGenres(),
-                        style: TextStyle(fontFamily: "PT"),
+                        style: const TextStyle(fontFamily: "PT"),
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
                       ),
@@ -62,18 +60,18 @@ class MediaListItem extends StatelessWidget {
                 ],
               ),
             ),
-            new Positioned(
+            Positioned(
               right: 10.0,
               bottom: 10.0,
-              child: new Column(
+              child: Column(
                 children: <Widget>[
-                  new Row(
+                  Row(
                     children: <Widget>[
-                      new Text(media.voteAverage.toString()),
-                      new Container(
+                      Text(media.voteAverage.toString()),
+                      Container(
                         width: 5.0,
                       ),
-                      new Icon(
+                      Icon(
                         Icons.star,
                         size: 18,
                         color: Colors.lime[900],
@@ -83,7 +81,7 @@ class MediaListItem extends StatelessWidget {
                 ],
               ),
             )
-          ])),
+          ]),
         ],
       ),
     );

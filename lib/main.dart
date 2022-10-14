@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/home.dart';
 
 void main() {
-  runApp(new MaterialApp(
+  runApp(MaterialApp(
     home: Home(),
     debugShowCheckedModeBanner: false,
-    theme: new ThemeData.dark(),
+    theme: ThemeData.dark(),
   ));
 }

@@ -9,29 +9,18 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _loadJson();
-  // }
-
-  // _loadJson() async {
-  //   String data = await HttpHandler().fetchMovies();
-  //   print(data);
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: new AppBar(
-        title: new Text(
+      appBar: AppBar(
+        title: const Text(
           "Cuevana UTXJ app 191004",
           style: TextStyle(fontFamily: "Oswald"),
         ),
         backgroundColor: Colors.black12,
         actions: <Widget>[
-          new IconButton(
-            icon: new Icon(
+          IconButton(
+            icon: const Icon(
               Icons.search,
               color: Colors.white,
             ),
@@ -39,35 +28,35 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-      drawer: new Drawer(
-          child: new ListView(
+      drawer: Drawer(
+          child: ListView(
         children: <Widget>[
-          new DrawerHeader(child: new Material()),
-          new ListTile(
-            title: new Text("Peliculas"),
-            trailing: new Icon(Icons.local_movies),
+          const DrawerHeader(child: Material()),
+          const ListTile(
+            title: Text("Peliculas"),
+            trailing: Icon(Icons.local_movies),
           ),
-          new Divider(
+          const Divider(
             height: 5.0,
           ),
-          new ListTile(
-            title: new Text("Televisión"),
-            trailing: new Icon(Icons.live_tv),
+          const ListTile(
+            title: Text("Televisión"),
+            trailing: Icon(Icons.live_tv),
           ),
-          new Divider(
+          const Divider(
             height: 5.0,
           ),
-          new ListTile(
-            title: new Text("Cerrar"),
-            trailing: new Icon(Icons.close),
+          ListTile(
+            title: const Text("Cerrar"),
+            trailing: const Icon(Icons.close),
             onTap: () => Navigator.of(context).pop(),
           ),
         ],
       )),
-      body: new PageView(
-        children: <Widget>[new MediaList()],
+      body: PageView(
+        children: const <Widget>[MediaList()],
       ),
-      bottomNavigationBar: new BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
         items: _getFooterItems(),
       ),
     );
@@ -75,11 +64,11 @@ class _HomeState extends State<Home> {
 
   List<BottomNavigationBarItem> _getFooterItems() {
     return [
-      new BottomNavigationBarItem(
+      const BottomNavigationBarItem(
           icon: Icon(Icons.thumb_up), label: ("Populares")),
-      new BottomNavigationBarItem(
+      const BottomNavigationBarItem(
           icon: Icon(Icons.update), label: ("Proximamente")),
-      new BottomNavigationBarItem(
+      const BottomNavigationBarItem(
           icon: Icon(Icons.star), label: ("Mejor Valoradas")),
     ];
   }
