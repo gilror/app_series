@@ -1,0 +1,4 @@
+#Thu Oct 13 20:45:42 CDT 2022
+base.0=D\:\\Documentos\\10 Cuatrimestre\\PMI\\App 14 octubre\\series\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
